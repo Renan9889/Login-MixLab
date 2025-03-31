@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../Downloads/WebLab-main"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "leandro",
+		"liveServer.settings.port": 5501
+	}
+}

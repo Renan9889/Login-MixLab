@@ -1,0 +1,76 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.quadrado {
+    width: 350px;
+    padding: 30px;
+    background-color: #8a2be2;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.quadrado h2 {
+    margin-bottom: 20px;
+}
+
+
+input[type="email"], input[type="password"] {
+    width: 85%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+
+button {
+    width: 85%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #5c33b1; 
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #45208f;
+}
+
+
+#mensagem {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+}
+

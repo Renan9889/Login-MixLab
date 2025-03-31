@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebLab</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="cat.png" id="cat">
+            <div class="navb"> <a href="#contatos"> Contato </a>   <a href="#produtos">  Produtos </a>  <a href="#nos"> Sobre nós </a> 
+        </nav>
+    </header>
+
+
+    <div class="box1">
+        <h1>MixLab</h1>
+        <h2>Assinaturas:</h2>
+    </head>
+    <body>
+    
+    <div class="box2">
+        <p>Assinatura Básica:</p>
+        <ul>
+            <li>Acesso limitado ao catálogo de músicas.</li>
+            <li>Qualidade de áudio padrão.</li>
+            <li>Anúncios durante o streaming.</li>
+        </ul> 
+        <button onclick="showForm('Básica')">Assinar R$0,00</button>
+    </div>
+    
+    <div class="box2">
+        <p>Assinatura Premium:</p>
+        <ul>
+            <li>Acesso completo ao catálogo de músicas sem anúncios.</li>
+            <li>Qualidade de áudio superior.</li>
+            <li>Acesso a playlists exclusivas e conteúdo adicional, como vídeos de artistas e documentários.</li>
+            <li>Desconto de 15% na compra de discos.</li>
+        </ul> 
+        <button onclick="showForm('Premium')">Assinar R$14,90</button>
+    </div>
+    
+    <div class="box2">
+        <p>Assinatura VIP:</p>
+        <ul>
+            <li>Todos os benefícios da assinatura Premium.</li>
+            <li>Acesso antecipado a lançamentos e álbuns exclusivos.</li>
+            <li>Participação em sorteios de discos e merch do artista.</li>
+            <li>Desconto especial de 30% na compra de discos e itens exclusivos.</li>
+            <li>Suporte prioritário ao cliente.</li>
+        </ul> 
+        <button onclick="showForm('VIP')">Assinar R$35,50</button>
+    </div>
+    
+    <div id="form-container">
+        <h3>Assinatura <span id="subscription-type"></span></h3>
+        <form onsubmit="confirmSubscription(event)">
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="cpf">CPF:</label><br>
+            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14"><br><br>
+            <label for="credit-card">Cartão de Crédito ou Débito:</label><br>
+            <input type="text" id="credit-card" name="credit-card" placeholder="1234 5678 9012 3456" maxlength="19"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <button type="submit">Enviar</button>
+            <button type="button" onclick="closeForm()">Cancelar</button>
+        </form>
+    </div>
+    
+    <div id="confirmation-message">Assinatura Confirmada!</div>
+    </div>
+        
+    <div class="sobre">
+        <h2 id="mensagem">Carregando...</h2>
+        <button class="sair" onclick="logout()">Sair</button>
+
+        <script>
+
+            const usuarioEmail = localStorage.getItem("usuarioEmail");
+    
+            if (usuarioEmail) {
+                document.getElementById("mensagem").innerText = `Bem-vindo(a), ${usuarioEmail}!`;
+            } else {
+                document.getElementById("mensagem").innerText = "Usuário não autenticado!";
+            }
+    
+            function logout() {
+                localStorage.removeItem("usuarioEmail");
+                window.location.href = "../../cadastro.html";
+            }
+        </script>  
+        <h1 class="titu1"> Em Alta!</h1>
+        <div class="albuns">
+            <div class="albuns">
+                <div class="album-container">
+                    <img src="Hit_Me_Hard_and_Soft.png" class="album1">
+                    <p class="description">Hit Me Hard and Soft</p>
+                </div>
+                <div class="album-container">
+                    <img src="Rosé_&_Bruno_Mars_-_Apt.png" class="album2">
+                    <p class="description">Rosé & Bruno Mars - Apt</p>
+                </div>
+                <div class="album-container">
+                    <img src="sabrina.jpeg" class="album3">
+                    <p class="description">Short n' Sweet</p>
+                </div>
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <div class="nos" id="nos">
+        <img src="cat.png" class="cat2"> <h1>Sobre Nós</h1>
+
+        <p>
+            O MixLab nasceu de uma ideia simples: reunir em um só lugar tudo o que os amantes da música precisam. Queríamos criar um espaço onde fosse possível não apenas ouvir suas músicas favoritas, mas também ter acesso a itens especiais, como discos de vinil, CDs e outros produtos que trazem a música para fora das telas.
+        </p>
+
+        <h2>História</h2>
+
+        <p class="pg">Nossa história começou em 2020, quando um grupo de amigos, apaixonados por música e colecionadores inveterados de vinis, decidiu compartilhar essa paixão com o mundo. Entre conversas animadas e cafés até tarde da noite, surgiu a ideia de criar uma plataforma que conectasse fãs de música com tudo o que eles amam: streaming de alta qualidade e uma loja repleta de itens exclusivos.
+            Hoje, o MixLab é mais do que um site: é uma comunidade para quem vive e respira música. Trabalhamos para trazer o melhor da tecnologia e da experiência física de curtir um bom disco, combinando o novo e o clássico em um só lugar.
+            Venha explorar, descobrir novos sons e resgatar memórias. Porque, para nós, a música não é apenas algo que se ouve; é algo que se vive.
+        </p>
+
+        <h2 class="cm">Compromissos</h2>
+
+        <p class="pf">
+            No MixLab, nosso compromisso é oferecer a melhor experiência para os nossos clientes, tanto no streaming quanto na compra de produtos. Trabalhamos com dedicação para garantir que todos os itens vendidos em nossa loja atendam aos mais altos padrões de qualidade. Sejam discos de vinil, CDs ou acessórios de música, nossa equipe seleciona cuidadosamente cada produto, sempre buscando parceiros e fornecedores confiáveis. Nosso objetivo é proporcionar não apenas um serviço de alta performance, mas também uma jornada de compra segura e satisfatória, com atendimento personalizado e ágil. Acreditamos que a música é uma forma de arte que merece ser tratada com respeito e cuidado, e é isso que nos move a oferecer sempre o melhor para você.
+        </p>
+
+
+    </div>
+
+    <div class="produtos" id="produtos">
+        <h1> Produtos em Promoção!</h1>
+        <div class="produtos-lista">
+            <div class="produto-container">
+                <img src="thriller.jpeg" class="produto1">
+                <button class="comprar-btn">Comprar</button>
+            </div>
+            <div class="produto-container">
+                <img src="saturday.jpg" class="produto2">
+                <button class="comprar-btn">Comprar</button>
+            </div>
+            <div class="produto-container">
+                <img src="rumors.jpeg" class="produto3">
+                <button class="comprar-btn">Comprar</button>
+            </div>
+        </div>
+        <div class="produtos-lista">
+            <div class="produto-container">
+                <img src="img3.webp" class="produto4">
+                <button class="comprar-btn">Comprar</button>
+            </div>
+            <div class="produto-container">
+                <img src="backinblack.jpg" class="produto5">
+                <button class="comprar-btn">Comprar</button>
+            </div>
+            <div class="produto-container">
+                <img src="pf_dsotm.jpg" class="produto6">
+                <button class="comprar-btn">Comprar</button>
+            </div>
+        </div>
+        <div class="catalogo-link">
+            <a href="catalogo.html" class="catalogo-btn">Catálogo</a>
+        </div>
+    </div>
+
+    <footer id="contatos">
+        <p> Para entrar em contato, acesse nossas redes  sociais @MixLab no Instagram</p>
+        <p>Desenvolvedores: 
+            <a href="https://www.instagram.com/tomieeve/" class="developer-btn">Evelyn</a>  |
+            <a href="https://www.instagram.com/clariinhaj/" class="developer-btn">Clara</a> |
+            <a href="https://www.instagram.com/renan.olavo/" class="developer-btn">Renan</a> |
+            <a href="https://www.instagram.com/ghsoares__/profilecard/?igsh=MWUybGw5dWxrNDV6cg==" class="developer-btn">Gustavo</a> |
+            <a href="https://www.instagram.com/leandro_mmv/" class="developer-btn">Leandro</a> |
+        </p>
+    </footer>
+
+</body>
+</html>
